@@ -25,8 +25,8 @@
 using namespace std;
 #define FOR(i, begin, end, in) for (int i=begin ; i<end ; i+=in)
 #define RFOR(i, begin, end, in) for (int i=j ; i>=k ; i-=in)
-#define long long ll
-typedef vector<int> VI;
+#define ll long long
+typedef vector<ll> VI;
 
 int main()
 {
