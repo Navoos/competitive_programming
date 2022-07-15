@@ -25,10 +25,32 @@
 using namespace std;
 #define FOR(i, begin, end, in) for (int i=begin ; i<end ; i+=in)
 #define RFOR(i, begin, end, in) for (int i=j ; i>=k ; i-=in)
-#define long long ll
 typedef vector<int> VI;
+
 
 int main()
 {
 	cin.tie(0);cout.tie(0);ios::sync_with_stdio(false);
+	int n;cin >> n;
+	while (n--)
+	{
+		int a, x;cin >> a>> x;
+		VI vec(2 * a);
+		FOR(i, 0, 2 * a, 1)
+			cin >> vec[i];
+		sort(vec.begin(), vec.end());
+		int ans = 0;
+		int counter = 1;
+		for (int i = 2 * a - 1;i >= a;i -= 1)
+		{
+			int j = a - counter;
+			counter += 1;
+			if (abs(vec[i] - vec[j]) >= x)
+					ans += 1;
+		}
+		if (ans == a)
+			cout  << "YES" << endl;
+		else cout << "NO" << endl;
+	
+	}
 }

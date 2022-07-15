@@ -25,10 +25,21 @@
 using namespace std;
 #define FOR(i, begin, end, in) for (int i=begin ; i<end ; i+=in)
 #define RFOR(i, begin, end, in) for (int i=j ; i>=k ; i-=in)
-#define long long ll
 typedef vector<int> VI;
+
 
 int main()
 {
 	cin.tie(0);cout.tie(0);ios::sync_with_stdio(false);
+	int n;cin >> n;
+	while (n--)
+	{
+		string str;cin >>str;
+		transform(str.begin(), str.end(), str.begin(), ::tolower);
+		if (str == "yes")
+			cout << "YES";
+		else
+			cout << "NO";
+		cout << endl;
+	}
 }

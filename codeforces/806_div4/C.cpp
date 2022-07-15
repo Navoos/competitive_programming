@@ -25,10 +25,43 @@
 using namespace std;
 #define FOR(i, begin, end, in) for (int i=begin ; i<end ; i+=in)
 #define RFOR(i, begin, end, in) for (int i=j ; i>=k ; i-=in)
-#define long long ll
 typedef vector<int> VI;
+
 
 int main()
 {
 	cin.tie(0);cout.tie(0);ios::sync_with_stdio(false);
+	int n;cin >> n;
+	while (n--)
+	{
+		int size;cin >> size;
+		vector<int> comb(size);
+		FOR(i, 0, size, 1)
+			cin >> comb[i];
+		int j = 0;
+		while (size--)
+		{
+			int count;cin >> count;string co;cin >> co;
+			FOR(i, 0, count, 1)
+			{
+				if (co[i] == 'U')
+				{
+					if (comb[j] == 0)
+						comb[j] = 9;
+					else comb[j] = comb[j] - 1;
+				}
+				else
+				{
+					if (comb[j] == 9)
+						comb[j] = 0;
+					else comb[j] = comb[j] + 1;
+				}
+			}
+			j += 1;
+				
+		}
+		for(auto item : comb)
+			cout << item << " ";
+		cout << endl;
+	}
 }
