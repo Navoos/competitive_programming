@@ -26,11 +26,27 @@ using namespace std;
 #define FOR(i, begin, end, in) for (int i=begin ; i<end ; i+=in)
 #define RFOR(i, begin, end, in) for (int i=j ; i>=k ; i-=in)
 typedef vector<int> VI;
-#define long long LL;
 
 
+
+long long bin_expo(int base, int exp, int mod)
+{
+	long long res = 1;
+	base = base % mod;
+	while (exp)
+	{
+		if (exp & 1)
+			res = res * base % mod;
+		base = base * base % mod;
+		exp >>= 1;
+	}
+	return res;
+}
 
 int main()
 {
 	cin.tie(0);cout.tie(0);ios::sync_with_stdio(false);
+	int b, p, m;
+	while (cin >> b >> p >> m)
+		cout << bin_expo(b, p);
 }
